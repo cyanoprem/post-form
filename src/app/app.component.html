@@ -4,7 +4,7 @@
 
   <br>
   
-  <input type="text" id="post-title" name="post-title" placeholder="Post Title">
+  <input type="text" #postTitle (keyup)="0" id="post-title" name="post-title" placeholder="Post Title">
   
   <br><br>
   
@@ -23,4 +23,7 @@
   <input type="checkbox" id="bg-color" name="bg-color" value="Bike">
   <label for="bg-color">Add Background</label>
 
+  <br><br>
+
+  <h1>{{ postTitle.value }}</h1>
 </div>
