@@ -4,26 +4,40 @@
 
   <br>
   
-  <input type="text" #postTitle (keyup)="0" id="post-title" name="post-title" placeholder="Post Title">
+  <input type="text" #postTitle (keyup)="showText(postTitle.value)" id="post-title" name="post-title" placeholder="Post Title">
   
   <br><br>
   
-  <textarea id="post-details" name="post-details" rows="4" cols="50" placeholder="Post Details"></textarea>
+  <textarea id="post-details" #postDetails (keyup)="0" name="post-details" rows="4" cols="50" placeholder="Post Details"></textarea>
   
   <br><br>
   
-  <input type="text" id="img-url" name="img-url" placeholder="Post Image URL">
+  <input type="text" #imgUrl (keyup)="0" id="img-url" name="img-url" placeholder="Post Image URL">
   
   <br><br>
   
-  <input type="text" id="post-url" name="post-url" placeholder="Post URL">
+  <input type="text" #postUrl (keyup)="0" id="post-url" name="post-url" placeholder="Post URL">
   
   <br><br>
   
-  <input type="checkbox" id="bg-color" name="bg-color" value="Bike">
+  <input type="checkbox" [(ngModel)]="isChecked" (change)="isItChecked()" id="bg-color" name="bg-color" value="">
   <label for="bg-color">Add Background</label>
 
   <br><br>
 
-  <h1>{{ postTitle.value }}</h1>
+  <img [src]="imgUrl.value" alt="">
+
+  <br>
+
+  <h1 [style.backgroundColor] = "isChecked? 'yellow': ''">{{ value }}</h1>
+
+  <br>
+
+  <p>{{ postDetails.value }}</p>
+
+  <br>
+
+  <a [href]="postUrl.value" target="_blank">Post Link</a>
+
+  
 </div>

@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'post-form';
+  value: string = '';
+  isChecked: boolean = false;
+
+  showText(value: string) {
+    this.value = value;
+  }
+
+  isItChecked() {
+    if(this.isChecked) {
+      
+    }
+  }
 }
